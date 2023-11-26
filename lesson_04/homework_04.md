@@ -14,7 +14,9 @@
 1. Після перевірки вашого pull request, власник головного репозиторію може прийняти ваші зміни до свого репозиторію. У разі виникнення конфлікту його вам треба буде вирішити!
 
 # Курочка ряба.
-Жили-були дід та баба і була в них курочка ряба..
+
+Жили-були дід та баба. Та була в них курочка ряба. Знесла курочка яєчко.
+
 Курочка Ряба — це героїня української народної казки, яка вирішує вивести курчаток із складних життєвих ситуацій. У казці розкривається суть взаємодії та допомоги, а Ряба стає справжньою прикладною лідеркою у курячому світі.
 Знесла яєчко, та не просте, а золоте
 """
@@ -22,3 +24,4 @@ An Old Man and Old Woman lived in a small village. They had got a hen – Ryaba.
 
 The Owners put the egg in the middle of the table to have a good look at it. The egg was glittering in the sun so that they couldn’t take their eyes off it! They admired this wonderful egg and wanted to taste it. The Old Man took the egg to break it. However hard he tries to break it – he could’t.
 """
+Дід бив, не розбив, баба била, не розбила.
