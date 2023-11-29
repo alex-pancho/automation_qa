@@ -1,26 +1,46 @@
 small_list = [3, 1, 4, 5, 2, 5, 3]
 big_list = [3, 5, -2, -1, -3, 0, 1, 4, 5, 2]
 # task 1. Знайдіть всі унікальні елементи в списку small_list
-
+print(f"Task #1:"
+      f"\nUnique elements in list:\n{set(small_list)}")
 # task 2. Знайдіть середнє арифметичне всіх елементів у списку small_list
-
+print("Task #2:")
+number = 0
+for i in big_list:
+    number = number + i
+print(f"Avg:\n{number}/{len(big_list)} = {number/len(big_list)}")
 # task 3. Перевірте, чи є в списку big_list дублікати
-
+print("Task #3:")
+if big_list != set(big_list):
+    print(f"There is duplicate in {big_list}"
+          f"\nList without duplicates: {set(big_list)}")
+else:
+    print("No duplicate")
 
 base_dict = {'contry':'Ukraine', 'continent': 'Europe', 'size': 123}
 add_dict = {"a":1, "b":2, "c":2, "d":3, 'size': 12}
 # task 4. Знайдіть ключ з максимальним значенням у словнику add_dict
+print(f"Task #4:"
+      f"\nThe most big value is: {max(add_dict.values())}")
 
 # task 5. Створіть новий словник, в якому ключі та значення будуть
 # замінені місцями у заданому словнику
-
+new_dict = {'login':'user', 'password': 123456}
+print("Task #5")
+revers_new_dict = {}
+for v, k in new_dict.items():
+    revers_new_dict[k] = v
+print(f"Reversed dict: {revers_new_dict}")
 # task 6. Об'єднайте два словника base_dict та add_dict  в новий словник sum_dict
 # Якщо ключі збігаються, то перетворіть значення в строку та об'єднайте їх
-sum_dict = {}
-
+print("Task #6:")
+sum_dict = base_dict
+sum_dict.update(add_dict)
+print(f"base_dict + add_dict = {sum_dict}")
 # task 7.
+print("Task #7:")
 line = "Створіть множину всіх символів, які входять у заданий рядок"
-
+print(f"Set of all symbols: {set(line)}")
 # task 8. Обчисліть суму елементів двох множин, які не є спільними
 set_1 = {1, 2, 3, 4, 5}
 set_2 = {4, 6, 5, 10}
