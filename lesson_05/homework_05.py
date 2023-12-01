@@ -44,6 +44,9 @@ print(f"Set of all symbols: {set(line)}")
 # task 8. Обчисліть суму елементів двох множин, які не є спільними
 set_1 = {1, 2, 3, 4, 5}
 set_2 = {4, 6, 5, 10}
+print("Task #8")
+sets_unique = set_1 ^ set_2
+print(f"Sum of uniq elements is {sum(sets_unique)}")
 
 # task 9. Створіть два списки та обробіть їх так, щоб отримати сет, який
 # містить всі елементи з обох списків,  які зустрічаються тільки один раз.
