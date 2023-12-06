@@ -24,9 +24,9 @@ base_dict = {'contry':'Ukraine', 'continent': 'Europe', 'size': 123}
 add_dict = {"a":1, "b":2, "c":2, "d":3, 'size': 12}
 # task 4. Знайдіть ключ з максимальним значенням у словнику add_dict
 
-max_key = max(add_dict.keys())
-max_key_value = max(add_dict.values())
-print(f"Ключ з максимальним значенням: {max_key}, його значення: {max_key_value}")
+max_key = max(add_dict, key=add_dict.get)
+max_value = add_dict[max_key]
+print(f"Ключ з максимальним значенням: {max_key}, його значення: {max_value}")
 
 # task 5. Створіть новий словник, в якому ключі та значення будуть
 # замінені місцями у заданому словнику
@@ -52,7 +52,7 @@ print("Множина всіх символів у рядку:", character_set)
 # task 8. Обчисліть суму елементів двох множин, які не є спільними
 set_1 = {1, 2, 3, 4, 5}
 set_2 = {4, 6, 5, 10}
-sum_of_unique_elements = sum(set_1.union(set_2))
+sum_of_unique_elements = sum(set_1.union(set_2) - set_1.intersection(set_2))
 print("Сума елементів двох множин, які не є спільними:", sum_of_unique_elements)
 
 # task 9. Створіть два списки та обробіть їх так, щоб отримати сет, який
