@@ -190,4 +190,4 @@ def check_input(user_input):
         raise TypeError(f"Wrong type: {user_input} not int")
 
 print(a_plus_b(1,2))
-print(a_plus_b(1,2,3,4,"5"))
+# print(a_plus_b(1,2,3,4,"5"))
