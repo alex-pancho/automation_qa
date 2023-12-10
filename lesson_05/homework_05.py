@@ -74,4 +74,4 @@ person_list = [('Alice', 25), ('Boby', 19), ('Charlie', 32),
 new_dict = dict(person_list)
 my_values = list(new_dict.values())
 print(my_values)
-#Данную задачу тоже не смог осилить пока
+#Данную задачу тоже не смог осилить пока (
