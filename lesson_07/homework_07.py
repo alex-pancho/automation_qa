@@ -5,23 +5,25 @@
 """
 
 
-def multiplication_table(number: int):
+def multiplication_table(number: int) -> str:
     """
-    This function prints the multiplication table of a given digit up to 25.
+    This function returns the multiplication table of a given digit up to 25.
     :param number: Int
     :return: multiplication table.
     """
-
+    result_table = ''
     multiplier = 1
     while True:
         result = number * multiplier
         if result > 25:
             break
-        print(f"{number}x{multiplier}={result}")
+        result_table += f"{number}x{multiplier}={result}\n"
         multiplier += 1
 
+    return result_table
 
-multiplication_table(3)
+
+print(multiplication_table(3))
 # result:
 # 3x1=3
 # ...
@@ -32,7 +34,7 @@ multiplication_table(3)
 """  Написати функцію, яка обчислює суму двох чисел.
 """
 
-def sum_ints(a, b):
+def sum_ints(a, b) -> int or float:
     """
     This function returns result of sum two numbers (float or/and int).
     """
@@ -47,25 +49,25 @@ sum_ints(8.55, 19)  # 8.55 + 19 = 27.55
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
 """
 
-def arithmetic_mean(nums):
+def arithmetic_mean(nums) -> float:
     """
-    This function prints an arithmetic mean
-    of any count of numbers in list.
+    This function returns an arithmetic mean of any count of numbers in list.
     :param nums: list of ints/floats
+    :return: arithmetic mean of nums (float)
     """
     arithmetic = sum(nums) / len(nums)
-    print(arithmetic)
+    return arithmetic
 
 
 list_of_nums = [10, 40]
-arithmetic_mean(list_of_nums)  # 25.0
+print(arithmetic_mean(list_of_nums))  # 25.0
 
 
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
 
-def reverse_string(string):
+def reverse_string(string) -> str:
     """
     This function reverses any string.
     :param string: string
@@ -82,17 +84,18 @@ print(reverse_string(my_str))  # !esrever ot gnirts si sihT
 """
 
 
-def longest_word(words: list):
+def longest_word(words: list) -> str:
     """
-    This function prints as result of the longest string in list.
+    This function returns as result of the longest string in list.
     :param words: list of strings
+    :return: longest str
     """
     result = max(words, key=len)
-    print(result)
+    return result
 
 
 list_of_words = ['samsung', 'apple', 'xaomi']
-longest_word(list_of_words)  # samsung
+print(longest_word(list_of_words))  # samsung
 
 # task 6
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
@@ -100,10 +103,10 @@ longest_word(list_of_words)  # samsung
 не є підрядком першого рядка."""
 
 
-def find_substring(str1, str2):
+def find_substring(str1, str2) -> int:
     """
     This function returns index of first letter of second string in first one.
-    The function return '-1' if second sting doesn't in first one.
+    The function return '-1' if second string doesn't in first one.
     :param str1: str
     :param str2: str
     :return: index str2 in str1 // -1
@@ -133,40 +136,21 @@ print(find_substring(str_1, str_2))  # -1
 # Задача з використанням циклу for та continue. Задано список фруктів 'fruits'
 # потрібно вивести на екран всі елементи списку, окрім "orange"
 
-def exclude(obj, excl):
+def exclude(obj, excl) -> list:
     """
-    This function can exclude item from list/set/tuple/dict and prints result.
+    This function can exclude item from list/set/tuple/dict and return result.
     Your original variable won't be changed.
     :param obj: list/set/tuple/dict
     :param excl: str
-    :return: Your variable without excluding item.
+    :return: Your variable (list) without excluding item
     """
-    res = [print(item) for item in obj if item != excl]
+    res = [item for item in obj if item != excl]
     return res
 
 
 fruits_list = ["apple", "banana", "orange", "grape", "mango"]
-fruits_set = set(fruits_list.copy())
-fruits_tuple = tuple(fruits_list.copy())
-fruits_dict = {
-    'apple': 1,
-    'banana': 2,
-    'orange': 3,
-    'grape': 4,
-    'mango': 5
-}
-
-exclude(fruits_list, 'orange')
-
-
-# apple
-# banana
-# grape
-# mango
-
-# exclude(fruits_set, 'apple')  # exclude 'apple' from set
-# exclude(fruits_tuple, 'banana')  # exclude 'banana' from tuple
-# exclude(fruits_dict, 'grape')  # eclude key 'grape' (with value) from dict
+print(exclude(fruits_list, 'orange'))
+# ['apple', 'banana', 'grape', 'mango']
 
 
 # task 8
@@ -178,39 +162,46 @@ exclude(fruits_list, 'orange')
 # + напишіть цикл for що перебере і обробить всі значення списку alien_color
 
 
-def alien_color_points(colors: list):
+def alien_color_points(colors: list) -> str:
     """
-    This function prints result of achived points for each color in list.
+    This function returns result of achived points for each color in list.
     :param colors: list
+    :return: total qty of points (message)
     """
+    points = 0
     for color in colors:
         if color == 'green':
-            print("Congratulations! You've got 5 points!")
-        if color == 'red':
-            print("Congratulations! You've got 15 points!")
-        elif color != 'green':
-            print("Congratulations! You've got 10 points!")
+            points += 5
+        elif color == 'red':
+            points += 15
+        else:
+            points += 10
+
+    res = f"Congratulations! You achived {points} points!"
+    return res
 
 
 alien_color = ['yellow', 'green', 'red', 'blue']
-alien_color_points(alien_color)  # 10, 5, 15, 10
+total_points = alien_color_points(alien_color)
+print(total_points)  # Congratulations! You achived 40 points!
 
 
 # task 9
 # Задано список чисел numbers, потрібно знайти список квадратів
 # парних чисел зі списку. Спробуйте використати if та цикл for в один рядок.
 
-def square_pairwise_nums(nums):
+def square_pairwise_nums(nums) -> list:
     """
-    This function prints the result of squaring all pairwise numbers in the list.
+    This function returns the result of squaring all pairwise numbers in the list.
     :param nums: list of numbers
+    :return: list of squaring pairwise numbers
     """
     result = [i ** 2 for i in nums if i % 2 == 0]
-    print(result)
+    return result
 
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9.8, 10]
-square_pairwise_nums(numbers)  # [4, 16, 36, 64, 100]
+print(square_pairwise_nums(numbers))  # [4, 16, 36, 64, 100]
 
 
 # task 10
@@ -222,18 +213,20 @@ square_pairwise_nums(numbers)  # [4, 16, 36, 64, 100]
 # 2) Скільки щонайменше разів родині необхідно заїхати на заправку
 # під час цієї подорожі, кожного разу заправляючи повний бак?
 
-def distance_costs(dist, capacity, flow_100):
+def distance_costs(dist, capacity, flow_100) -> str:
     """
     This function can calculete how much litters of gasoline you need for trip and how many times should refuel.
     :param dist: int (km)
     :param capacity: int (litter)
     :param flow_100: int (litter)
+    :return: message (total gasoline, refuel times)
     """
     total_gas = int(dist / 100 * flow_100)
     refuel = int(total_gas / capacity)
-    print(f"The trip of {dist} km will require {total_gas} liters of gasoline, "
-          f"so you will have to refuel at least {refuel} times.")
+    result = (f"The trip of {dist} km will require {total_gas} liters of gasoline, "
+              f"so you will have to refuel at least {refuel} times.")
+    return result
 
 
-distance_costs(1600, 48, 9)
+print(distance_costs(1600, 48, 9))
 # The trip of 1600 km will require 144 liters of gasoline, so you will have to refuel at least 3 times.
