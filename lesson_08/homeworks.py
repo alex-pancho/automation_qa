@@ -15,34 +15,6 @@ def reverse_string(input_string):
     return reversed_string
 
 
-#
-# def calculate_sum_until_zero_entered():
-#     """
-#     Функція, яка просить користувача ввести числа, доки він не введе 0.
-#     Підраховує суму всіх введених чисел, окрім 0, і виводить її на екран.
-#
-#     :return: Сума введених чисел.
-#     """
-#     total_sum = 0
-#
-#     while True:
-#         user_input = input("Введіть число (для завершення введіть 0): ")
-#
-#         if user_input.isdigit():
-#             num = int(user_input)
-#         else:
-#             print("Некоректний ввід. Будь ласка, введіть число.")
-#             continue
-#
-#         if user_input == '0':
-#             break
-#
-#         total_sum += num
-#
-#     return total_sum
-#
-# result = calculate_sum_until_zero_entered()
-# print(f"Результат сумування: {result}")
 
 def calculate_average(numbers):
     """
