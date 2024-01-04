@@ -56,31 +56,32 @@ class Human:
             self.energy = 0
 
 
-person1 = Human("John", "Johnny", "11/11/1990", "male")
-person2 = Human("Tony", "Tonny", "12/01/1988", "male")
-person3 = Human("Cuper", "Johns", "12/10/1991", "male")
-person4 = Human("Ana", "Dee", "02/04/2003", "female")
-person5 = Human("Lola", "Smith", "21/12/2010", "female")
+if __name__ == "__main__":
+    person1 = Human("John", "Johnny", "11/11/1990", "male")
+    person2 = Human("Tony", "Tonny", "12/01/1988", "male")
+    person3 = Human("Cuper", "Johns", "12/10/1991", "male")
+    person4 = Human("Ana", "Dee", "02/04/2003", "female")
+    person5 = Human("Lola", "Smith", "21/12/2010", "female")
 
-person1.eat()
-person1.make_hm()
+    person1.eat()
+    person1.make_hm()
 
-person2.speak()
-person2.walk()
+    person2.speak()
+    person2.walk()
 
-person3.sleep()
-person3.eat()
+    person3.sleep()
+    person3.eat()
 
-person4.make_hm()
-person4.walk()
+    person4.make_hm()
+    person4.walk()
 
-person5.walk()
-person5.eat()
+    person5.walk()
+    person5.eat()
 
-persons = [person1, person2, person3, person4, person5]
-max_energy_person = persons[0]
-for p in persons:
-    if p.energy > max_energy_person.energy:
-        max_energy_person = p
+    persons = [person1, person2, person3, person4, person5]
+    max_energy_person = persons[0]
+    for p in persons:
+        if p.energy > max_energy_person.energy:
+            max_energy_person = p
 
-print(f"{max_energy_person.name} {max_energy_person.second_name} has more energy than others.")
+    print(f"{max_energy_person.name} {max_energy_person.second_name} has more energy than others.")
