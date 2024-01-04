@@ -22,20 +22,25 @@ result_file = global_folder_path / 'ideas_for_test' / 'work_with_csv' / 'result.
 
 
 def find_csv_duplicates(csv_file_1, csv_file_2, output_file):
-    """ This funtion read two csv files and write duplicates in new file. """
+    """
+    This function reads two csv files, compares for duplicates, and writes unique values to the output file.
+    """
     with open(csv_file_1, 'r') as csvfile:
-        data_01 = csvfile.readlines()
+        data_01 = set(csvfile.readlines())
     with open(csv_file_2, 'r') as csvfile:
-        data_02 = csvfile.readlines()
+        data_02 = set(csvfile.readlines())
 
-    duplicates = [line for line in data_01 if line in data_02]
+    unique_data = data_01.symmetric_difference(data_02)
+    duplicates = data_01.intersection(data_02)
 
     with open(output_file, 'w') as file:
-        for line in duplicates:
+        for line in unique_data:
             file.write(line)
 
+    return duplicates
 
-find_csv_duplicates(csv_file_01, csv_file_02, result_file)
+
+resulting_duplicates = find_csv_duplicates(csv_file_01, csv_file_02, result_file)
 
 # task 2
 """ Провалідуйте, чи усі файли у папці
@@ -59,12 +64,12 @@ def json_files_validator(filenames: list):
         try:
             with open(file, 'r', encoding="utf-8") as f:
                 json.load(f)
-        except json.JSONDecodeError:
-            logging.error(f'File "{file.name}" is not valid JSON file.')
+        except (json.JSONDecodeError, KeyError, AttributeError, ValueError) as e:
+            logging.error(f'File "{file.name}" is not valid JSON file. Error: {e}')
 
 
 json_files_validator([json_file_01, json_file_02, json_file_03, json_file_04])
-# ERROR:root:File "login.json" is not valid JSON file.
+# ERROR:root:File "login.json" is not valid JSON file. Error: Expecting ',' delimiter: line 8 column 1 (char 324)
 
 
 # task 3
