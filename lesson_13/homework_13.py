@@ -59,11 +59,10 @@ if __name__ == "__main__":
     Olena.eating(), Olena.sleeping()
     Katya.homework(), Katya.sleeping()
     energy_list = [Alex.energy, Pawlo.energy, Serhii.energy, Olena.energy, Katya.energy]
-    print(max(energy_list))
+    print("Max energy after all actions :", max(energy_list))
 
 
 import unittest
-from homework_13 import Alex, Serhii, Pawlo, Olena, Katya
 
 class Test(unittest.TestCase):
     def test_Alex_gender(self):
