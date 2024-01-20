@@ -1,4 +1,7 @@
 def log_factorial_calls(func):
+    """
+    Decorator for logs
+    """
     def wrapper(n):
         print(f"Calling {func.__name__}({n})")
         result = func(n)
