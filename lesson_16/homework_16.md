@@ -7,8 +7,8 @@
 
 3. Відкрити папку у новому проекті IDE
 
-4. Створити файл з таким змістом:
-    ```
+4. Створити у проекті файл з таким змістом:
+    ```python
     import randominfo
     person = randominfo.Person()
     print(person.full_name, person.gender, person.country, person.address)
