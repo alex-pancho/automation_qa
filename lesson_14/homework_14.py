@@ -30,3 +30,45 @@ else:
 
 Написати на це все тести
 """
+
+
+class SiteUser():
+    def __init__(self, name=str, email=str, access_type=str, log_count=int):
+        self.name = name
+        self.email = email
+        self._access_type = access_type
+        self.log_count = log_count
+
+    @property
+    def logcount(self):
+        """will get user`s logcount"""
+        return self.log_count
+        # print(f"User logcount is :{self.log_count}")
+
+    @logcount.setter
+    def logcount(self, value):
+        """will set user`s  new logcount"""
+        self.log_count = value
+
+    def __str__(self):
+        """will return user info"""
+        return f"Користувач: {self.name}, Електронна пошта: {self.email}, Рівень доступу: {self._access_type}"
+
+    def __eq__(self, other):
+        if self._access_type == other._access_type:
+            return "Користувачі однакові"
+        else:
+            return "Користувачі різні"
+
+
+user_1 = SiteUser("Petro", "petro@gmail.com", "user", 12)
+user_2: SiteUser = SiteUser("Wlad", "testeeth@yahoo.com", "moderator", 37)
+user_3 = SiteUser("Antoine", "troycore@mail.com", "admin", 101)
+user_4 = SiteUser("Alena", "alena@gmail.com", "user", 2)
+
+print(user_1)  # will return user_1 info"
+print(user_4 == user_2)  # will compare access type between user 4 and user 2
+
+print(user_1.logcount)  # will return logcount of user_1
+user_3.logcount = 321  # will set new logcount value
+print(user_3.logcount)
