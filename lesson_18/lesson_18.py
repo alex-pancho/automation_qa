@@ -26,6 +26,7 @@ data = urlencode(data).encode("utf-8")  # Кодуємо дані для POST-з
 request = Request(url, data=data, method="POST") # PUT для  пут запиту
 response = urlopen(request)
 
+
 html_content = response.read()
 print(html_content)
 
