@@ -49,6 +49,7 @@ for color in alien_color:
 pizza_add = ''
 while pizza_add != 'Не потрібно':
     pizza_add = input("Введіть начинку для піци (або 'Не потрібно' для завершення): ")
+    # ЗАУВАЖЕННЯ - дбайте про користувача. 'stop' quit - ввести набагато простіше ніж отце
     if pizza_add != 'Не потрібно':
         print(f"Додано {pizza_add} до піци.")
 
