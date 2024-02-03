@@ -69,8 +69,6 @@ class SQLiteDatabase:
         except sqlite3.Error as e:
             print(f"Error deleting record: {e}")
 
-import unittest
-import os
 
 class TestSQLiteDatabase(unittest.TestCase):
     def setUp(self):
