@@ -4,9 +4,7 @@ ideas_for_test/work_with_csv
 порівняйте на наявність дублікатів
 результат запишіть у файл result_<your_second_name>.csv
 """
-import os
 
-import path
 
 # task 2
 """ Провалідуйте, чи усі файли у папці
@@ -21,6 +19,7 @@ ideas_for_test/work_with_json
 по значенню timingExbytes/incoming
 результат пошуку виведіть через логер на рівні інфо
 """
+
 import csv
 import glob
 from logger import logging as log
