@@ -82,4 +82,3 @@ def xml_search(n):
             # print(value.text)
             log.info(value.text)
 
-verify_json()
