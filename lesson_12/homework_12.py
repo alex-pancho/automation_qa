@@ -79,6 +79,5 @@ def xml_search(n):
             value: object = child.find("timingExbytes/incoming")
             if value is None:
                 raise ValueError("Not founded any value !")
-            # print(value.text)
             log.info(value.text)
 
