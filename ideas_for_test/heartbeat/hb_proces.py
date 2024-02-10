@@ -29,7 +29,7 @@ def analyze_logs(log_entries):
             current_time = datetime.strptime(timestamp, '%H:%M:%S')
             if key == 'TSTFEED0300' and current_time.second > 30 and current_time.second < 32:
                 logging.warning(f'Heartbeat more than 30 seconds for Key {key} at {timestamp}')
-            elif current_time.second >= 32:
+            elif key == 'TSTFEED0300' and current_time.second >= 32:
                 logging.error(f'Heartbeat exactly 32 seconds or more for Key {key} at {timestamp}')
 
 if __name__ == "__main__":
