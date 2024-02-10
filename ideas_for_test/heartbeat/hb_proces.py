@@ -7,7 +7,7 @@ from datetime import datetime
 logging.basicConfig(filename='BPM.log', level=logging.INFO, format='%(levelname)s: %(message)s')
 filepath = Path(__file__).parent / "hblog"
 with open(filepath, mode="r") as f:
-    data = f.readlines()
+    line_data = f.readlines()
 
 def parse_timestamp(entry):
     timestamp_match = re.search(r'Timestamp (\d+:\d+:\d+)', entry)
@@ -33,4 +33,4 @@ def analyze_logs(log_entries):
                 logging.error(f'Heartbeat exactly 32 seconds or more for Key {key} at {timestamp}')
 
 if __name__ == "__main__":
-    analyze_logs(data)
+    analyze_logs(line_data)
