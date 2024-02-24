@@ -54,10 +54,21 @@ class users():
         return s.put(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def resetpassword(s:requests.session, user_id:int, token:str):
-        # TODO: make this part better
-        endpoint = f"/users/resetpassword/{user_id}/{token}"
-        return s.get(base_api_url+endpoint)
+    def resetpassword(s: requests.session, user_id_or_request_body, token=None):
+        endpoint = "/users/resetpassword"
+
+        if isinstance(user_id_or_request_body, dict):
+            if 'user_id' in user_id_or_request_body and 'token' in user_id_or_request_body:
+                endpoint += f"/{user_id_or_request_body['user_id']}/{user_id_or_request_body['token']}"
+            else:
+                raise ValueError("Request body should contain 'user_id' and 'token'")
+        else:
+            if token is None:
+                raise ValueError("Token must be provided")
+            endpoint += f"/{user_id_or_request_body}/{token}"
+
+        return s.get(base_api_url + endpoint)
+
 
     @staticmethod
     def email(s: requests.session, request_body: dict):
@@ -70,7 +81,7 @@ class users():
         return s.put(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def users(s: requests.session, request_body: dict = {}):
+    def delete_user(s: requests.session, request_body: dict = {}):
         endpoint = "/users"
         return s.delete(base_api_url+endpoint)
 
