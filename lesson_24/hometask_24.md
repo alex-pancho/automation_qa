@@ -1,0 +1,15 @@
+website - https://www.lastingdynamics.com/
+
+LD logo - //*[@id="logo-classic"]
+"Menu" button - //*[@id="div_block-1142-7"]
+"Contact us" button - //*[@id="link_button-1141-7"]
+"Our projects" button - //*[@id="link_button-1831-12"]
+"Check our case studies" button - //*[@id="text_block-1879-12"]
+"Previous" button - //*[@id="text_block-1909-12"]
+"Next" button - //*[@id="text_block-1910-12"]
+"Discover more" button - //*[@id="text_block-1927-12"]
+"Discover our services" button - //*[@id="link_button-1980-12"]
+"Reach out now" button - //*[@id="link_button-1008-12"]
+"View certificate" button - //*[@id="link_button-1801-12"]
+"Book a demo" button - //*[@id="link_button-948-12"]
+"Visit platform" button - //*[@id="link_button-1365-12"]
