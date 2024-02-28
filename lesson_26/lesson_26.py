@@ -1,6 +1,7 @@
 import sys
 import pathlib
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 from lesson_25.lesson_25 import *
@@ -15,6 +16,18 @@ def selector(driver):
     element = find_by_xpath(driver, xpath)
     select = Select(element)
     return select
+
+
+def wait_and_click(driver, xpath):
+    """Wait few seconds before click. Wait until find element by Xpath"""
+    element = WebDriverWait(driver, 3.5).until(lambda x: x.find_element(By.XPATH, xpath))
+    element.click()
+
+
+def get_text(driver, xpath):
+    """Get text from found element (by Xpath)"""
+    element = find_by_xpath(driver, xpath)
+    return element.text
 
 
 if __name__ == "__main__":
