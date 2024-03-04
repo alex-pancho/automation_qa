@@ -1,5 +1,5 @@
-from pages.elements import WebElement
-from pages.base_page import BasePage
+from elements import WebElement
+from base_page import BasePage
 
 
 class HomePage(BasePage):

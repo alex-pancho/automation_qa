@@ -9,8 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-class WebElement():
 
+class WebElement():
     _locator = ('', '')
     _web_driver = None
     _page = None
@@ -124,6 +124,22 @@ class WebElement():
             msg = 'Element with locator {0} not found'
             raise AttributeError(msg.format(self._locator))
 
+    def send_keys_and_enter(self, keys, wait=2):
+        """ Send keys to the element and press Enter. """
+
+        keys = keys.replace('\n', '\ue007')
+
+        element = self.find()
+
+        if element:
+            element.clear()
+            element.send_keys(keys)
+            time.sleep(wait)
+            element.send_keys(Keys.RETURN)
+        else:
+            msg = 'Element with locator {0} not found'
+            raise AttributeError(msg.format(self._locator))
+
     def get_text(self):
         """ Get text of the element. """
 
@@ -162,7 +178,7 @@ class WebElement():
 
         if element:
             action = ActionChains(self._web_driver)
-            action.move_to_element_with_offset(element, x_offset, y_offset).\
+            action.move_to_element_with_offset(element, x_offset, y_offset). \
                 pause(hold_seconds).click(on_element=element).perform()
         else:
             msg = 'Element with locator {0} not found'
@@ -170,6 +186,13 @@ class WebElement():
 
         if self._wait_after_click:
             self._page.wait_page_loaded()
+
+    def move_to_element(self):
+        element = self.find()
+
+        action = ActionChains(self._web_driver)
+        action.move_to_element(element)
+        action.perform()
 
     def right_mouse_click(self, x_offset=0, y_offset=0, hold_seconds=0):
         """ Click right mouse button on the element. """
@@ -205,7 +228,7 @@ class WebElement():
 
         # Scroll page to the element (option #1):
         self._web_driver.execute_script("arguments[0].scrollIntoView();", element)
-        
+
         # Scroll to element (option #2 - sometimes it is only one working solution)
         # element.send_keys(Keys.DOWN)
 
@@ -233,7 +256,7 @@ class ManyWebElements(WebElement):
 
         try:
             elements = WebDriverWait(self._web_driver, timeout).until(
-               EC.presence_of_all_elements_located(self._locator)
+                EC.presence_of_all_elements_located(self._locator)
             )
         except:
             print(('Elements not found on the page!', 'red'))
@@ -303,10 +326,12 @@ if __name__ == "__main__":
     import sys
     import pathlib
     import time
+
     root = str(pathlib.Path(__file__).parents[2])
     print(root)
     sys.path.insert(0, root)
     from lesson_27_pt2.get_browser import firefox
+
     driver = firefox(True)
     url = "https://guest:welcome2qauto@qauto.forstudy.space/"
     driver.get(url)

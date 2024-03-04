@@ -1,11 +1,11 @@
-from pages.elements import WebElement
+from .elements import WebElement
+
 
 class BasePage:
     locators = {}
 
     def __init__(self, driver):
         self.driver = driver
-
 
     def item(self, name:str):
         _xpath = self.locators.get(name)
