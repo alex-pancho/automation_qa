@@ -7,15 +7,16 @@ def firefox(debug=False):
     options = FirefoxOptions()
     options.add_argument("--headless")
     driver = webdriver.Firefox() if debug else \
-             webdriver.Firefox(options=options)
+        webdriver.Firefox(options=options)
     driver.maximize_window()
     return driver
 
 
-def chrome():
+def chrome(debug=False):
     options = ChromeOptions()
     options.add_argument('--headless=new')
-    driver = webdriver.Chrome(options)
+    driver = webdriver.Chrome() if debug else \
+        webdriver.Chrome(options)
     return driver
 
 

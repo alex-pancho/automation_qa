@@ -1,70 +1,81 @@
-adwentures_of_tom_sawer = """\
-Tom gave up the brush with reluctance in his .... face but alacrity
-in his heart. And while
-the late steamer
-"Big Missouri" worked ....
-and sweated
-in the sun,
-the retired artist sat on a barrel in the .... shade close by, dangled his legs,
-munched his apple, and planned the slaughter of more innocents.
-There was no lack of material;
-boys happened along every little while;
-they came to jeer, but .... remained to whitewash. ....
-By the time Ben was fagged out, Tom had traded the next chance to Billy Fisher for
-a kite, in good repair;
-and when he played
-out, Johnny Miller bought
-in for a dead rat and a string to swing it with—and so on, and so on,
-hour after hour. And when the middle of the afternoon came, from being a
-poor poverty, stricken boy in the .... morning, Tom was literally
-rolling in wealth."""
+alice_in_wonderland = '"Would you tell me, please, which way I ought to go from here?"\n"That depends a good deal on where you want to get to," said the Cat.\n"I don't much care where ——" said Alice.\n"Then it doesn't matter which way you go," said the Cat.\n"—— so long as I get somewhere," Alice added as an explanation.\n"Oh, you're sure to do that," said the Cat, "if you only walk long enough."'
+# task 01 == Розділіть змінну alice_in_wonderland так, щоб вона займала декілька фізичних лінії
+# task 02 == Знайдіть та екрануйте всі символи одинарної дужки у тексті
+# task 03 == Виведіть змінну alice_in_wonderland на друк
 
-##  ПЕРЕЗАПИСУЙТЕ зміст змінної adwentures_of_tom_sawer у завданнях 1-3
-# task 01 ==
-""" Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
-треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
 
-# task 02 ==
-""" Замініть .... на пробіл
 """
-
-# task 03 ==
-""" Зробіть так, щоб у тексті було не більше одного пробілу між словами.
+    # Задачі 04 -10:
+    # Переведіть задачі з книги "Математика, 5 клас"
+    # на мову пітон і виведіть відповідь, так, щоб було
+    # зрозуміло дитині, що навчається в п'ятому класі
 """
-
-
 # task 04
-""" Виведіть, скількі разів у тексті зустрічається літера "h"
+"""
+Площа Чорного моря становить 436 402 км2, а площа Азовського
+моря становить 37 800 км2. Яку площу займають Чорне та Азов-
+ське моря разом?
 """
 
 
 # task 05
-""" Виведіть, скільки слів у тексті починається з Великої літери?
+"""
+Мережа супермаркетів має 3 склади, де всього розміщено
+375 291 товар. На першому та другому складах перебуває
+250 449 товарів. На другому та третьому – 222 950 товарів.
+Знайдіть кількість товарів, що розміщені на кожному складі.
 """
 
 
 # task 06
-""" Виведіть позицію, на якій слово Tom зустрічається вдруге
+"""
+Михайло разом з батьками вирішили купити комп’ютер, ско-
+риставшись послугою «Оплата частинами». Відомо, що сплачу-
+вати необхідно буде півтора року по 1179 грн/місяць. Обчисліть
+вартість комп’ютера.
 """
 
 
 # task 07
-""" Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
-Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-adwentures_of_tom_sawer_sentences = None
+Знайди остачу від діленя чисел:
+a) 8019 : 8     d) 7248 : 6
+b) 9907 : 9     e) 7128 : 5
+c) 2789 : 5     f) 19224 : 9
+"""
+
 
 # task 08
-""" Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
-Перетворіть рядок у нижній регістр.
+"""
+Іринка, готуючись до свого дня народження, склала список того,
+що їй потрібно замовити. Обчисліть, скільки грошей знадобиться
+для даного її замовлення.
+Назва товару    Кількість   Ціна
+Піца велика     4           274 грн
+Піца середня    2           218 грн
+Сік             4           35 грн
+Торт            1           350 грн
+Вода            3           21 грн
 """
 
 
 # task 09
-""" Перевірте чи починається якесь речення з "By the time".
+"""
+Ігор займається фотографією. Він вирішив зібрати всі свої 232
+фотографії та вклеїти в альбом. На одній сторінці може бути
+розміщено щонайбільше 8 фото. Скільки сторінок знадобиться
+Ігорю, щоб вклеїти всі фото?
 """
 
 
 # task 10
-""" Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
+"""
+Родина зібралася в автомобільну подорож із Харкова в Буда-
+пешт. Відстань між цими містами становить 1600 км. Відомо,
+що на кожні 100 км необхідно 9 літрів бензину. Місткість баку
+становить 48 літрів.
+1) Скільки літрів бензину знадобиться для такої подорожі?
+2) Скільки щонайменше разів родині необхідно заїхати на зап-
+равку під час цієї подорожі, кожного разу заправляючи пов-
+ний бак?
 """
