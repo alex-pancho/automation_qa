@@ -73,7 +73,7 @@ class WebElement():
     def is_visible(self):
         """ Check is the element visible or not. """
 
-        element = self.find(timeout=0.1)
+        element = self.find(timeout=2)
 
         if element:
             return element.is_displayed()
@@ -155,7 +155,7 @@ class WebElement():
 
         element.send_keys(value)
 
-    def click(self, hold_seconds=0, x_offset=1, y_offset=1):
+    def click(self, hold_seconds=2, x_offset=1, y_offset=1):
         """ Wait and click the element. """
 
         element = self.wait_to_be_clickable()

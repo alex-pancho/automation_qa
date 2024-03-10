@@ -1,4 +1,4 @@
-from pages.elements import WebElement
+from .elements import WebElement
 
 class BasePage:
     locators = {}

@@ -1,13 +1,13 @@
 import pytest
-from get_browser import firefox, chrome
+from .get_browser import chrome
+from .pages.home_page import HomePage
+from .pages.cabinet_page import CabinetPage
 
-from pages.home_page import HomePage
+URL = "https://harwind.com.ua/"
 
-URL = "https://guest:welcome2qauto@qauto.forstudy.space/"
-
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="function")
 def driver():
-    _driver = firefox()
+    _driver = chrome(True)
     _driver.maximize_window()
     _driver.get(URL)
     yield _driver
@@ -17,3 +17,8 @@ def driver():
 @pytest.fixture
 def home_page(driver):
     return HomePage(driver)
+
+@pytest.fixture
+def cabinet_page(driver):
+    return CabinetPage(driver)
+
