@@ -24,3 +24,21 @@ https://tracking.novaposhta.ua/#/uk/
     Створити ПР
     написати ПР у відповіді в ЛМС
 """
+import sys
+import pathlib
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
+
+from lesson_26 import *
+
+
+def test_parcel_status():
+    driver = get_url(novapost_url)
+    element = find_by_id(driver, cmr_input_id)
+    element.click()
+    input_to(element, parcel_number)
+    search_button = find_by_id(driver, search_button_id)
+    search_button.click()
+    driver.implicitly_wait(2)
+    parcel_status = find_by_xpath(driver, cmr_status_xpath)
+    assert "Отримана" in parcel_status.text

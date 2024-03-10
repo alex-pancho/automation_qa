@@ -2,8 +2,16 @@ import sys
 import pathlib
 from selenium.webdriver.support.select import Select
 
+
+
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 from lesson_25.lesson_25 import *
+
+novapost_url = f"https://tracking.novaposhta.ua/#/uk/"
+cmr_input_id = "en"
+search_button_id = "np-number-input-desktop-btn-search-en"
+cmr_status_xpath = "//*[@class='header__status-text']"
+parcel_number = "20400373461432"
 
 
 def main():
@@ -15,6 +23,10 @@ def selector(driver):
     element = find_by_xpath(driver, xpath)
     select = Select(element)
     return select
+
+
+
+
 
 
 if __name__ == "__main__":

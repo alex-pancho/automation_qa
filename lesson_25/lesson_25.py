@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from dotenv import load_dotenv
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-if os.path.exists(dotenv_path):
-    load_dotenv(dotenv_path)
+# from dotenv import load_dotenv
+# dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+# if os.path.exists(dotenv_path):
+#     load_dotenv(dotenv_path)
 
 
 python_url = "http://www.python.org"
@@ -16,8 +16,8 @@ password = os.environ.get("HLLPASS")
 hilell_url = f"https://{user}:{password}@qauto.forstudy.space"
 
 def get_url(url):
-    #driver = webdriver.Chrome()
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
+    # driver = webdriver.Firefox()
     driver.get(url)
     return driver
 
