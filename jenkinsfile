@@ -11,12 +11,12 @@ pipeline {
             steps {
                 sh 'python3 -m venv venv'
                 sh '. $WORKSPACE/venv/bin/activate'
-                sh 'pip install -r requirements.txt'
+                sh 'pip install -r $WORKSPACE/requirements.txt'
             }
         }
-        stage('Test') { 
+        stage('Tests') {
             steps {
-                sh 'pytest --junitxml=$WORKSPACE/report.xml'
+                sh 'python3 -m pytest --junitxml=$WORKSPACE/report.xml'
                 junit 'report.xml'
             }
         }
