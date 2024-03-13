@@ -20,5 +20,11 @@ class TestLoginSystem(unittest.TestCase):
             log_content = log_file.read()
             self.assertIn('Login event - Username: john_doe, Status: success', log_content)
 
+    def test_fail_login(self):
+        log_event('john_doe', 'failed')
+        with open('login_system.log', 'r') as log_file:
+            log_content = log_file.read()
+            self.assertIn('Login event - Username: john_doe, Status: failed', log_content)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
