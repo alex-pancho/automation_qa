@@ -15,7 +15,9 @@ class HomePage(BasePage):
         user_name_field = "//input[@type='email']",
         password_field = "//input[@type='password']",
         login_submit_button = "//button[contains(text(), 'Увійти')]",
-        toast_error = "//div[@class='toast toast-error']"
+        toast_error = "//div[@class='toast toast-error']",
+        search_box = "//*[@id='app']/header[2]/div[2]/div/div/div[2]/form/div/div/input",
+        search_button = "//*[@id='app']/header[2]/div[2]/div/div/div[2]/form/div/div/button[2]/img"
         )
 
     def login(self, username, password):
@@ -32,3 +34,8 @@ class HomePage(BasePage):
         toast_error_element = self.item("toast_error")
         return toast_error_element
 
+    def search(self, text):
+        search_box = self.item("search_box")
+        search_box.send_keys(text)
+        search_button = self.item("search_button")
+        search_button.click()
