@@ -1,4 +1,5 @@
 # SOURCE: https://github.com/p2cbbb/torrow_qa_test
+fork backuped
 
 # Test task for the position SDET/QA Automation Engineer
 
@@ -11,7 +12,8 @@ Examples of scenarios:
  - Too much waiting for code input
 
 # Appendix:
-Приложение для тестирования находится по адресу https://dev1.torrow.net
+App for testing: https://dev1.torrow.net
+
 The sent code to the phone/email can be obtained by the following addresses:
 - https://smsdev1.torrow.net/api/phone/phone/[phoneNumber]
 
