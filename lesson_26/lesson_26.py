@@ -18,6 +18,9 @@ def selector(driver):
 
 
 if __name__ == "__main__":
+    # import time
+    # python -m http.server 80
+    # time.sleep(2)
     driver = main()
     select = selector(driver)
     two_element = find_by_xpath(driver, '//option[@value="two"]')
@@ -29,3 +32,4 @@ if __name__ == "__main__":
     assert two_element.is_selected()
     select.select_by_index(3)
     assert count_element.is_selected()
+
