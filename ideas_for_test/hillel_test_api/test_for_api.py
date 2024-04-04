@@ -2,10 +2,25 @@ from hillel_api import API
 import pytest
 
 
+def test_sigup_positive(s):
+
+    user_data = {
+    "name": "John",
+    "lastName": "Dou",
+    "email": "qam0404@2022test.com",
+    "password": "Qam2608venv",
+    "repeatPassword": "Qam2608venv"
+    }
+    r = API.auth.signup(s, user_data)
+    r_json = r.json()
+    assert r.status_code == 201, "Wrong status code"
+    assert r_json["status"] == "ok", "Key 'status' is not ok"
+
+
 def test_sigin_positive(s):
 
     user_data = {
-    "email": "qam2608@2022test.com",
+    "email": "qam0404@2022test.com",
     "password": "Qam2608venv",
     "remember": False
     }
@@ -34,3 +49,26 @@ def test_logout(s):
     r_json = r.json()
     assert r.status_code == 200, "Wrong status code"
     assert r_json["status"] == "ok", "Key 'status' is not ok"
+
+
+def test_sigin_delete_and_cant_resign(s):
+    """E2E test example"""
+    user_data = {
+    "email": "qam0404@2022test.com",
+    "password": "Qam2608venv",
+    "remember": False
+    }
+    r = API.auth.signin(s, user_data)
+    r_json = r.json()
+    assert r.status_code == 200, "Wrong status code"
+    assert r_json["status"] == "ok", "Key 'status' is not ok"
+    # delte user
+    r = API.users.users(s)
+    r_json = r.json()
+    assert r.status_code == 200, "Wrong status code"
+    assert r_json["status"] == "ok", "Key 'status' is not ok"
+    # cant login
+    r = API.auth.signin(s, user_data)
+    r_json = r.json()
+    assert r.status_code == 400, "Wrong status code"
+    assert r_json["status"] == "error", "Key 'error' expected"
