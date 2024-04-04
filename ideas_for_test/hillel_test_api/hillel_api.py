@@ -1,9 +1,8 @@
 import requests
 base_api_url = "https://qauto.forstudy.space/api"
-s = requests.session()
 
 
-class auth():
+class Auth():
 
     @staticmethod
     def logout(s: requests.session, request_body: dict = {}):
@@ -26,7 +25,7 @@ class auth():
         return s.post(base_api_url+endpoint, json=request_body)
 
 
-class users():
+class Users():
 
     @staticmethod
     def current(s: requests.session, request_body: dict = {}):
@@ -75,7 +74,7 @@ class users():
         return s.delete(base_api_url+endpoint)
 
 
-class cars():
+class Cars():
     @staticmethod
     def brands(s: requests.session, request_body: dict = {}):
         endpoint = "/cars/brands"
@@ -127,7 +126,7 @@ class cars():
         return s.delete(base_api_url+endpoint)
 
 
-class expenses():
+class Expenses():
 
     @staticmethod
     def expenses_get(s: requests.session, request_body: dict):
@@ -161,7 +160,7 @@ class expenses():
         return s.delete(base_api_url+endpoint)
 
 
-class instructions():
+class Instructions():
 
     @staticmethod
     def instructions(s: requests.session, request_body: dict):
@@ -179,3 +178,11 @@ class instructions():
         id_ = request_body.get("id", 1)
         endpoint = f"/instructions/{id_}"
         return s.get(base_api_url+endpoint)
+
+
+class API():
+    auth = Auth()
+    users = Users()
+    cars = Cars()
+    expenses = Expenses()
+    instructions = Instructions()
