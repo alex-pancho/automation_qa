@@ -1,8 +1,10 @@
 from hillel_api import API
-import pytest
+import requests
+
+s = requests.session()
 
 
-def test_sigup_positive(s):
+def test_sigup_positive():
 
     user_data = {
     "name": "John",
@@ -17,7 +19,7 @@ def test_sigup_positive(s):
     assert r_json["status"] == "ok", "Key 'status' is not ok"
 
 
-def test_sigin_positive(s):
+def test_sigin_positive():
 
     user_data = {
     "email": "qam0404@2022test.com",
@@ -30,7 +32,7 @@ def test_sigin_positive(s):
     assert r_json["status"] == "ok", "Key 'status' is not ok"
 
 
-def test_sigin_negative(s):
+def test_sigin_negative():
 
     user_data_negative = {
     "email": "qam@2022test.com",
@@ -43,7 +45,7 @@ def test_sigin_negative(s):
     assert r_json["status"] == "error", "Key 'status' is not error"
 
 
-def test_logout(s):
+def test_logout():
 
     r = API.auth.logout(s)
     r_json = r.json()
@@ -51,7 +53,7 @@ def test_logout(s):
     assert r_json["status"] == "ok", "Key 'status' is not ok"
 
 
-def test_sigin_delete_and_cant_resign(s):
+def test_sigin_delete_and_cant_resign():
     """E2E test example"""
     user_data = {
     "email": "qam0404@2022test.com",
